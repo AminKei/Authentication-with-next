@@ -1,0 +1,74 @@
+@import "./variables.scss";
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 1px solid $border;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: $text;
+  background: $background;
+  transition: all 0.3s ease;
+  direction: rtl;
+  text-align: center;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+  }
+
+  &.error {
+    border-color: $error;
+    animation: shake 0.3s ease;
+  }
+}
+
+.icon {
+  position: absolute;
+  right: 0.75rem;
+  color: $border;
+  font-size: 1.2rem;
+}
+
+.errorMessage {
+  display: block;
+  color: $error;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  text-align: right;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
